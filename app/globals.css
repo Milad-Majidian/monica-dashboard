@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-cl: #9373ee;
+  --border-cl : #EFEFEF;
+  --border-cl2 : #E0E0E0;
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb:255, 255, 255;
+  --color:#181818;
+}
+
+
+
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+body {
+    max-width: 100%;
+    background-color: var(--background-rgb) ;
+    font-family: DM Sans, sans-serif;
+    font-size: 16px;
+    color: var(--color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.MuiTab-root{
+  text-transform: none !important;
+}
+.MuiDrawer-paper{
+  transition: all 0.3s ease ;
+  transition: ease-in-out 0.3s;
+}
+
+
+
+.MuiTab-root.Mui-selected {
+    background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #9373ee0f 51.04%, #9373ee2b 100%);
+}
+.mui-vuc9yg-MuiButtonBase-root-MuiTab-root.Mui-hover {
+    background-image: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #9373ee0f 51.04%, #9373ee2b 100%);
+}
+.MuiTab-root.Mui-selected>.MuiTab-iconWrapper {
+    color: var(--primary-cl) !important;
+}
+
+@media screen and (min-width: 900px) {
+  .MuiGrid2-root {
+  border:1px solid var(--border-cl) !important;
+}
+}
+
+
