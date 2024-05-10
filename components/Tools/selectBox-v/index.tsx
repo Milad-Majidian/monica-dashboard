@@ -1,46 +1,43 @@
 import { useEffect, useId, useLayoutEffect } from "react";
 import "./style.css";
+import chatGpt from "@/public/images/chatGPT/chatGPT.svg";
+import setting from "@/public/images/chatGPT/settings.svg";
 
 import React, { use, useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { IoMdCheckmark } from "react-icons/io";
 import { IoSearchOutline } from "react-icons/io5";
+import Image from "next/image";
 
-function SelectBox({
-  options,
-  onSelect,
-}: {
-  options: string[];
-  onSelect: (value: string) => void;
-}) {
-  useEffect(() => {
-    const searchBox: any = document.querySelector(".search-box input");
-    const optionsList: any = document.querySelectorAll(".option");
+function SelectBoxV({ options }: { options: string[] }) {
+  // useEffect(() => {
+  //   const searchBox: any = document.querySelector(".search-box input");
+  //   const optionsList: any = document.querySelectorAll(".option");
 
-    searchBox.addEventListener("keyup", function (e: any) {
-      filterList(e.target.value);
-    });
+  //   searchBox.addEventListener("keyup", function (e: any) {
+  //     filterList(e.target.value);
+  //   });
 
-    const filterList = (searchTerm: any) => {
-      searchTerm = searchTerm.toLowerCase();
-      optionsList.forEach((option: any) => {
-        let label =
-          option.firstElementChild.nextElementSibling.innerText.toLowerCase();
-        if (label.indexOf(searchTerm) != -1) {
-          option.style.display = "block";
-        } else {
-          option.style.display = "none";
-        }
-      });
-    };
-    window.addEventListener("click", function (e: any) {
-      console.log(document.querySelector(".select-box")?.contains(e.target));
+  //   const filterList = (searchTerm: any) => {
+  //     searchTerm = searchTerm.toLowerCase();
+  //     optionsList.forEach((option: any) => {
+  //       let label =
+  //         option.firstElementChild.nextElementSibling.innerText.toLowerCase();
+  //       if (label.indexOf(searchTerm) != -1) {
+  //         option.style.display = "block";
+  //       } else {
+  //         option.style.display = "none";
+  //       }
+  //     });
+  //   };
+  //   window.addEventListener("click", function (e: any) {
+  //     console.log(document.querySelector(".select-box")?.contains(e.target));
 
-      if (!document.querySelector(".select-box")?.contains(e.target)) {
-        setActive(false);
-      }
-    });
-  });
+  //     if (!document.querySelector(".select-box")?.contains(e.target)) {
+  //       setActive(false);
+  //     }
+  //   });
+  // });
 
   const [selected, setSelected] = useState<number | null>(null);
   const [active, setActive] = useState(false);
@@ -56,7 +53,6 @@ function SelectBox({
               <div
                 onClick={() => {
                   setSelected(index);
-                  onSelect(option);
                   setActive(false);
                   setSearch("");
                   const options = document.querySelectorAll(".option");
@@ -83,15 +79,21 @@ function SelectBox({
             );
           })}
         </div>
-
+        <span className="text-[14px] font-[500]">Engine</span>
         <div
-          className="selected"
+          className="selected relative !px-[40px]"
           onClick={() => {
             setActive(!active);
             setSearch("");
           }}
         >
-          {selected ? options[selected] : options[0]}
+          {selected ? options[selected] : "GPT-3.5"}
+          <div className="absolute left-[10px] top-2">
+            <Image src={chatGpt} alt="logo" width={24} height={24} />
+          </div>
+          <div className="absolute right-11 top-2">
+            <Image src={setting} alt="logo" width={24} height={24} />
+          </div>
         </div>
 
         <div className="search-box relative">
@@ -111,4 +113,4 @@ function SelectBox({
   );
 }
 
-export default SelectBox;
+export default SelectBoxV;

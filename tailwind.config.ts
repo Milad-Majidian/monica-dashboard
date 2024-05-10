@@ -1,3 +1,4 @@
+import { light } from "@mui/material/styles/createPalette";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -14,12 +15,13 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        primary: "#f30235",
+        primary: "#9373ee",
+        primaryLight: "#F2EEFD",
         secondary: "#19bfd3",
         bgPrimary: "#f7f7f8",
         bgSecondary: "#FCFCFD",
         textPrimary: "#1a2448",
-        textSecondary: "#5d616f",
+        textSecondary: "#747474",
         borderPrimary: "#EFEFEF",
         borderSecondary: "#EFEFEF",
       },

@@ -6,6 +6,7 @@ import ContentContainer from "../Content-container";
 import { usePathname, useRouter } from "next/navigation";
 import { Typography } from "@mui/material";
 import TabPanel from "../Tabs/tabPanel";
+import History from "../History";
 
 function Layouts({ children }: { children: React.ReactNode }) {
   const [value, setValue] = useState(0);
@@ -14,6 +15,7 @@ function Layouts({ children }: { children: React.ReactNode }) {
   console.log(pathName);
 
   const [desktopDrawer, setDesktopDrawer] = useState(true);
+  const [openHistory, setOpenHistory] = useState(false);
 
   const toggleDesktopDrawer = () => {
     setDesktopDrawer(!desktopDrawer);
@@ -79,6 +81,8 @@ function Layouts({ children }: { children: React.ReactNode }) {
       <ContentContainer
         desktopDrawer={desktopDrawer}
         toggleDesktopDrawer={toggleDesktopDrawer}
+        openHistory={openHistory}
+        setOpenHistory={setOpenHistory}
       >
         {children}
         {/* {TabPanelContent.map((item, index) => {
@@ -88,6 +92,7 @@ function Layouts({ children }: { children: React.ReactNode }) {
             </TabPanel>
           );
         })} */}
+        <History openHistory={openHistory} />
       </ContentContainer>
     </MainLayout>
   );

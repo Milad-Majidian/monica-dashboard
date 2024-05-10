@@ -28,7 +28,12 @@ import { FaPencilAlt } from "react-icons/fa";
 import { AiOutlineCamera } from "react-icons/ai";
 import { HiTranslate } from "react-icons/hi";
 import { TbTextGrammar } from "react-icons/tb";
-import { IoCodeSlash } from "react-icons/io5";
+import {
+  IoAlertCircleOutline,
+  IoCodeSlash,
+  IoNotificationsOutline,
+} from "react-icons/io5";
+
 import Link from "next/link";
 
 // import {
@@ -206,22 +211,28 @@ function DrawerContent({
           bottom: 0,
           right: 0,
           left: 0,
-          p: 2,
         }}
         color="whitesmoke"
       >
-        <Typography variant="subtitle2" color="whitesmoke">
-          طراحی شده با
-          {/* <FavoriteRounded
-            sx={{ verticalAlign: "middle", color: "grey[400]", height: 20 }}
-          /> */}
-        </Typography>
-        <Typography variant="subtitle2" color="whitesmoke">
-          1403
-          {/* <CopyrightRounded
-            sx={{ verticalAlign: "middle", color: "grey[400]" }}
-          /> */}
-        </Typography>
+        <div className="w-full h-[115px] border-t border-solid border-borderPrimary px-[24px] py-[36px] text-textPrimary">
+          <div className="flex justify-between items-center">
+            <div className="flex gap-3 justify-center items-center">
+              <Avatar
+                sx={{ width: 50, height: 50 }}
+                alt="Remy Sharp"
+                src="/images/sideBar/avatar.png"
+              />
+              <div className="flex flex-col justify-start items-start text-textPrimary gap-1">
+                <h4 className="text-[14px] font-[500]">Sara Moradi</h4>
+                <span className="text-[#747474] text-[12px]">Lorem </span>
+              </div>
+            </div>
+            <div className="flex justify-between items-center gap-6 text-textSecondary">
+              <IoNotificationsOutline size={24} />
+              <IoAlertCircleOutline size={24} />
+            </div>
+          </div>
+        </div>
       </Box>
     </>
   );

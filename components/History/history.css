@@ -1,0 +1,16 @@
+
+.history-box {
+    position: absolute;
+    width: 390px;
+    top: 85px;
+    bottom: 0px;
+    max-height: 100%;
+    z-index: 999;
+    pointer-events: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: var(--bg-primary-cl);
+    right: 0;
+    height: 100%;
+}

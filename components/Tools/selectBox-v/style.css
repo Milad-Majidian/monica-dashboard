@@ -48,7 +48,6 @@
   overflow-y: scroll;
   margin-top: 54px;
   position: absolute;
-  z-index: 999;
   top: 52px;
   background: #FFFFFF;
   border-bottom-left-radius: 8px;
@@ -94,7 +93,7 @@
   padding: 9px 24px;
   margin: 6px 0;
   cursor: pointer;
-  
+  font-size: 14px;
 }
 
 

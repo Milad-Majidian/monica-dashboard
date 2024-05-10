@@ -3,7 +3,13 @@ import { TextareaAutosize as BaseTextareaAutosize } from "@mui/base/TextareaAuto
 import { styled } from "@mui/system";
 import { Box } from "@mui/material";
 
-export default function Textarea({ placeholder }: { placeholder: string }) {
+export default function Textarea({
+  placeholder,
+  onChange,
+}: {
+  placeholder: string;
+  onChange: (value: React.ChangeEvent<HTMLTextAreaElement>) => void;
+}) {
   const blue = {
     100: "#DAECFF",
     200: "#b6daff",
@@ -72,6 +78,7 @@ export default function Textarea({ placeholder }: { placeholder: string }) {
           aria-label="minimum height"
           minRows={12}
           placeholder={placeholder}
+          onChange={onChange}
         />
       </Box>
     </>
