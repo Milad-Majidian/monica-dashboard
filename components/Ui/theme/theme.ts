@@ -39,10 +39,14 @@ const theme = createTheme({
       main: "#dc004e",
       light: "#EFEFEF",
     },
-    // text: {
-    //   primary: "#1d1d1d",
-    //   secondary: "#f0f0f0",
-    // },
+    background: {
+      default: "#f0f0f0",
+      paper: "#F8F8F8",
+    },
+    text: {
+      primary: "#1d1d1d",
+      secondary: "#747474",
+    },
   },
 });
 

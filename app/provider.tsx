@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 
 import theme from "../components/Ui/theme/theme";
 import ThemeRegistry from "@/components/Ui/ThemeRegistry";
+import "@/variable/variable.css";
 
 function Provider({ children }: { children: ReactNode }) {
   return (
